@@ -3,11 +3,9 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "react-jsx", // Enable JSX support for React 17+
+    "jsx": "react-jsx",
     "module": "ESNext",
     "skipLibCheck": true,
-
-    /* Bundler mode */
     "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -15,8 +13,6 @@
     "noEmit": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

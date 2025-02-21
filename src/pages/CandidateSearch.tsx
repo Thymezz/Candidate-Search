@@ -15,13 +15,9 @@ const CandidateSearch = () => {
     setLoading(true);
     setError('');
     try {
-      console.log('Fetching candidates from GitHub...');
       const users = await searchGithub();
-      console.log('Users fetched:', users);
-
       if (users && users.length > 0) {
         const userDetails = await searchGithubUser(users[0].login);
-        console.log('User details:', userDetails);
         setCandidate(userDetails);
       } else {
         setError('No candidates found from the API.');
@@ -33,7 +29,6 @@ const CandidateSearch = () => {
       setLoading(false);
     }
   };
-
 
   if (loading) return <p>Loading candidate...</p>;
   if (error) return <p>{error}</p>;

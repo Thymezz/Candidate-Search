@@ -3,11 +3,11 @@ services:
     name: candidate-search-app
     env: node
     buildCommand: "npm run build"
-    startCommand: "serve -s dist -l 3000"
+    startCommand: "serve -s dist -l $PORT"
     envVars:
       - key: NODE_VERSION
         value: 18.17.0
-    routes:
-      - type: rewrite
-        source: "/*"
-        destination: "/index.html"
+routes:
+  - type: rewrite
+    source: "/*"
+    destination: "/index.html"

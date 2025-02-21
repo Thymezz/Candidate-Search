@@ -38,15 +38,16 @@ const CandidateSearch = () => {
     <div>
       <h1>Candidate Search</h1>
       <img src={candidate.avatar_url} alt={`${candidate.login}'s avatar`} width="150" />
-      <p><strong>Name:</strong> {candidate.name || 'Name not available'}</p>
+      {candidate.name && <p><strong>Name:</strong> {candidate.name}</p>}
       <p><strong>Username:</strong> {candidate.login}</p>
-      <p><strong>Location:</strong> {candidate.location || 'Location not available'}</p>
-      <p><strong>Email:</strong> {candidate.email || 'Email not available'}</p>
-      <p><strong>Company:</strong> {candidate.company || 'No company listed'}</p>
+      {candidate.location && <p><strong>Location:</strong> {candidate.location}</p>}
+      {candidate.email && <p><strong>Email:</strong> {candidate.email}</p>}
+      {candidate.company && <p><strong>Company:</strong> {candidate.company}</p>}
       <p><strong>GitHub Profile:</strong> <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">Visit Profile</a></p>
       <button onClick={fetchCandidate}>Fetch Another Candidate</button>
     </div>
   );
+
 };
 
 export default CandidateSearch;

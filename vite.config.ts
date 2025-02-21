@@ -12,9 +12,7 @@ export default defineConfig({
     allowedHosts: ['candidate-search-app-pk5z.onrender.com'], // Allow Render's domain
   },
   server: {
-    fs: {
-      allow: ['.'], // Allow serving files from the root
-    }
+    port:3000
   },
   build: {
     rollupOptions: {

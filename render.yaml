@@ -3,7 +3,7 @@ services:
     name: candidate-search-app
     env: node
     buildCommand: "npm run build"
-    startCommand: "npm run start"
+    startCommand: "serve -s dist -l 3000"
     envVars:
       - key: NODE_VERSION
         value: 18.17.0

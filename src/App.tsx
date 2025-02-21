@@ -5,6 +5,7 @@ import SavedCandidates from './pages/SavedCandidates';
 import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
+  console.log("App component loaded"); // Debug log
   return (
     <Router>
       <Nav />

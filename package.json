@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "start": "serve -s dist -l ${PORT:-3000}",
-    "postinstall": "npm install react react-dom react-router-dom @types/react @types/react-dom @types/react-router-dom"
+    "prebuild": "npm install",
+    "postinstall": "npm install @types/react @types/react-dom @types/react-router-dom"
   },
   "dependencies": {
     "react": "^18.3.1",

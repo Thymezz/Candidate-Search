@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const CandidateSearch = () => {
-  const [candidate, setCandidate] = useState({
+  const [candidate] = useState({
     name: "Test Candidate",
     login: "test_user",
     location: "Test City",

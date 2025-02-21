@@ -4,17 +4,16 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   envDir: './env',
   plugins: [react()],
-  base: '/', // Set the base URL to the root
+  base: '/', // Changed from './'
   preview: {
     port: parseInt(process.env.PORT || '4173'),
-    host: '0.0.0.0', // Allow external access on Render
+    host: true,
+    allowedHosts: ['candidate-search-app-pk5z.onrender.com'],
   },
   server: {
-    port: parseInt(process.env.PORT || '3000'),
-    host: '0.0.0.0',
+    port: 3000,
   },
   build: {
-    outDir: 'dist', // Ensure the build outputs to the dist folder
     rollupOptions: {
       input: '/index.html',
     },

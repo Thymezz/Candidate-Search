@@ -1,22 +1,22 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   envDir: './env',
   plugins: [react()],
-  base:'./',
+  base: './', // Ensure relative paths for assets
   preview: {
-    port: parseInt(process.env.PORT || '4173'), // Use Render's PORT
-    host: true, // Allow external access
-    allowedHosts: ['candidate-search-app-pk5z.onrender.com'], // Allow Render's domain
+    port: parseInt(process.env.PORT || '4173'), // Use Render's assigned port
+    host: '0.0.0.0', // Allow external access on Render
   },
   server: {
-    port:3000
+    port: parseInt(process.env.PORT || '3000'), // Use environment port
+    host: '0.0.0.0', // Allow external access
   },
   build: {
+    outDir: 'dist', // Ensure Vite outputs to the dist folder
     rollupOptions: {
-      input: '/index.html' // Ensure that all routes resolve to index.html
-    }
-  }
+      input: '/index.html',
+    },
+  },
 });
